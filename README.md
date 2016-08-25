@@ -1,3 +1,3 @@
 # simulate-maps
-GUI for simulation Discrete Dynamical Systems on 2D  torus
+GUI for simulation Discrete Dynamical Systems (maps) on 2D  torus.
 
