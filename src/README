@@ -1,0 +1,53 @@
+Martin Horvat, PhD in theoretical Physics
+
+email:martin.horvat@fmf.uni-lj.si
+web: http://chaos.fmf.uni-lj.si/horvat
+skype:mukitheman
+
+Department of physics
+Faculty of mathematics and physics
+University of Ljubjana
+Slovenia
+
+**Introduction**
+
+A trajectory {(x^t,y^t) : t = 0, 1,2,...} of a discrete dynamical system phi^t:T->T defined over a two-dimensional torus T=[0,L_1]x[0,L_2] is a sequence of points obtained via iteration
+
+	(x^{t+1},y^{t+1}) = phi(x^t,y^t), 
+
+which can be explicitly written using two function f,g:T -> R as
+	
+	x^{t+1} = f(x^t,y^t)  mod L_1
+	y^{t+1} = g(x^t,y^t)  mod L_2
+
+The phi maps a point on the torus T back to the torus T and defines the dynamical system. Therefore usually we call a dynamical system just simply a map.
+
+
+By taking different initial points an plotting the trajectories we obtain so called phase-portrait that to tells alot about the dynamics of such dynamical system. That can be easily done using the program "sim".The program "sim" is only intended for a qualitative study of maps (dynamical system) on the 2d torus. For serious work the author suggests that users write their own code without the graphical user interface (GUI). Nevertheless the program can be of great help in the preliminary scientific research of maps. 
+
+The content of the package is
+	sim.cpp sim.h <-- the source that compiles to "sim"
+	sim.glade <-- information about the graphical interface made in GLADE
+	sim.cfg <-- record of saved maps
+
+To compile the program you have to do the following:
+	./confugure
+	make
+
+For easier work the author suggests that you  copy all necessary files (sim, sim.glade and sim.cfg) to a separate directory and run the program "sim" there. The program sim.cpp and sim.h was written and may be redistributed under GNU Lesser General Public License (LGPL) version 3 and testing was performed on ubuntu 8.10 (linux OS). But please note that the random generator "Mersenne Twister" in file "MersenneTwister.h" redistributed under BSD license.
+
+**Short tutorial**
+
+In the frame named "Formula" you write the expression for the g(x,y) and f(x,y). To define these two functions use the same syntax as you normally use in a C/C++ program to write mathematical expression. The build-in functions can be seen at http://muparser.sourceforge.net/mup_features.html#idDef2. To the expressions you can add constants. 
+
+The formulas for f(x,y) and g(x,y) and names of the constants, together called a configuration, can be saves using the command in the frame named "Configuration".  Individual configurations can be selected using the combobox, or saved by different names using the "SaveAs" button, or even deleted from the database by pressing the "Delete" button.
+
+The simulation is started by pressing the "Start" button. Thereby the expressions and constants are first checked for semantic and syntactic errors. To start the iteration of the map pick with the mouse cursor a point on the canvas.
+
+You can notice that by moving the mouse over the canvas there as relative coordinates of the canvas displayed below the canvas. 
+
+**Note**
+
+The program depeds for parsing mathematical expressions on the MuParser, which can be obtained at http://muparser.sourceforge.net/ and it is also available on site that this program originates.
+
+
